@@ -12,12 +12,12 @@ pipeline{
     }
     stage("Checkout from SCM"){
       steps {
-        git branch: 'main', credentialsId: 'github', url: 'https://github.com/akashvip15/DevOps-New-proj'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/akashvip15/register-app'
       }
     }
     stage("Build Application"){
       steps {
-        sh "mvn clean package"
+        sh "cd build-source && mvn clean package"
       }
     }
     stage("Test Application"){
@@ -27,4 +27,3 @@ pipeline{
     }
   }
 }
-    
